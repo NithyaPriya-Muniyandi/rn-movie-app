@@ -59,14 +59,16 @@ const _layout = () => {
           ),
         }}
       />
-      <Tabs.Screen
-        name="learn"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabItem focused={focused} icon="book-outline" label="Learn" />
-          ),
-        }}
-      />
+<Tabs.Screen
+  name="learn"
+  options={{
+    tabBarIcon: ({ focused }) => (
+      <TabItem focused={focused} icon="school-outline" label="Learn" />
+    ),
+  }}
+/>
+
+
       <Tabs.Screen
         name="profile"
         options={{
