@@ -50,30 +50,6 @@ const learn = () => {
 </View>
 
 
-      {/* <View className="flex-row justify-between mx-4 my-2">
-   <View className="flex-1 bg-blue-50 rounded-xl p-4 mr-2 shadow relative items-center">
-  <Image
-    source={require("../../assets/images/courseImg1.webp")}
-    className="w-24 h-24 rounded-lg"
-    resizeMode="contain"
-  />
-  <View className="absolute bottom-4 right-0 bg-[#9DC9FF] px-4 py-1.5 rounded-l-full">
-    <Text className="text-[#003E64] text-sm font-semibold">New</Text>
-  </View>
-</View>
-
-      <View className="flex-1 bg-green-50 rounded-xl p-4 ml-2 shadow items-center">
-        <Image
-          source={require("../../assets/images/courseimage2.webp")}
-          className="w-20 h-20 mb-2"
-          resizeMode="contain"
-        />
-       <View className="absolute bottom-4 right-0 bg-[#54ABA5] px-4 py-1.5 rounded-l-full">
-          <Text className="text-[#07423F] font-semibold text-sm">Popular</Text>
-        </View>
-      </View>
-    </View> */}
-
       {/* Search Bar */}
       <View className="flex-row items-center border-b border-gray-300 mx-4 my-2">
         <TextInput
