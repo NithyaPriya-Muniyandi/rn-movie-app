@@ -11,9 +11,10 @@ import {
 
 export default function CreateCourseLayout() {
   const router = useRouter();
-  const [visible, setVisible] = useState(false);
-  const [menuVisible, setMenuVisible] = useState(false);
-  const [modulesVisible, setModulesVisible] = useState(false);
+  const [visible, setVisible] = useState(false); // Add card modal
+  const [menuVisible, setMenuVisible] = useState(false); // Side menu
+  const [modulesVisible, setModulesVisible] = useState(false); // Modules modal
+  const [formatVisible, setFormatVisible] = useState(false); // Format modal
 
   const menuItems = [
     { icon: "create-outline", label: "Rename" },
@@ -122,23 +123,53 @@ export default function CreateCourseLayout() {
       <Stack screenOptions={{ headerShown: false }} />
 
       {/* Footer Toolbar */}
-      <View className="flex-row justify-around items-center border-t border-gray-200 py-3 bg-white">
-        <TouchableOpacity>
-          <Ionicons name="text-outline" size={22} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="image-outline" size={22} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="cloud-upload-outline" size={22} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="refresh-outline" size={22} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons name="trash-outline" size={22} color="black" />
-        </TouchableOpacity>
-      </View>
+     <View className="flex-row justify-around items-center border-t border-gray-200 py-3 bg-white">
+  {/* Microphone */}
+  <TouchableOpacity>
+    <Ionicons name="mic-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Text / Format */}
+  <TouchableOpacity onPress={() => setFormatVisible(true)}>
+    <Ionicons name="text-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* List */}
+  <TouchableOpacity>
+    <Ionicons name="list-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Arrow / Forward */}
+  <TouchableOpacity>
+    <Ionicons name="arrow-forward-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Image */}
+  <TouchableOpacity>
+    <Ionicons name="image-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Upload */}
+  <TouchableOpacity>
+    <Ionicons name="cloud-upload-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Timer */}
+  <TouchableOpacity>
+    <Ionicons name="time-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Trash */}
+  <TouchableOpacity>
+    <Ionicons name="trash-outline" size={22} color="black" />
+  </TouchableOpacity>
+
+  {/* Settings */}
+  <TouchableOpacity>
+    <Ionicons name="settings-outline" size={22} color="black" />
+  </TouchableOpacity>
+</View>
+
 
       {/* Add card modal */}
       <Modal visible={visible} transparent animationType="slide">
@@ -238,8 +269,69 @@ export default function CreateCourseLayout() {
           </View>
         </View>
       </Modal>
+      {/* Format Modal */}
+<Modal
+  visible={formatVisible}
+  animationType="slide"
+  transparent={true}
+  onRequestClose={() => setFormatVisible(false)}
+>
+  <View className="flex-1 bg-black/40 justify-end">
+    <View className="bg-white rounded-t-2xl p-5 max-h-[80%]">
+      {/* Header */}
+      <View className="flex-row justify-between items-center">
+        <Text className="text-xl font-bold">Format text</Text>
+        <TouchableOpacity onPress={() => setFormatVisible(false)}>
+          <Ionicons name="close" size={20} color="black" />
+        </TouchableOpacity>
+      </View>
 
-      {/* Course Menu Panel */}
+      {/* Title, Heading, Subheading */}
+      <View className="flex-row mt-4">
+        <TouchableOpacity className="px-4 py-2 bg-primary rounded-full mr-2">
+          <Text className="text-white font-bold">Title</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="px-4 py-2 bg-gray-200 rounded-full mr-2">
+          <Text className="font-semibold text-gray-600">Heading</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="px-4 py-2 bg-gray-100 rounded-full">
+          <Text className="font-medium text-gray-500">Subheading</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Bold, Italic, Underline, Strikethrough */}
+      <View className="flex-row mt-5">
+        <TouchableOpacity className="bg-primary rounded-lg mr-2 flex items-center justify-center h-10 w-10">
+          <Text className="text-lg text-white font-bold">B</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="bg-gray-200 rounded-lg mr-2 flex items-center justify-center h-10 w-10">
+          <Text className="text-lg italic">I</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="bg-gray-200 rounded-lg mr-2 flex items-center justify-center h-10 w-10">
+          <Text className="text-lg underline">U</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="bg-gray-200 rounded-lg mr-2 flex items-center justify-center h-10 w-10">
+          <Text className="text-lg line-through">S</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity className="bg-gray-100 rounded-lg mr-2 flex items-center justify-center h-10 w-10">
+          <Ionicons name="text-outline" size={22} color="black" />
+        </TouchableOpacity>
+
+        <TouchableOpacity className="bg-gray-100 rounded-lg flex items-center justify-center h-10 w-10">
+          <Ionicons name="ellipse" size={22} color="black" />
+        </TouchableOpacity>
+      </View>
+    </View>
+  </View>
+</Modal>
+
+
       {menuVisible && (
         <View className="absolute top-0 right-0 bottom-0 w-4/5 bg-white shadow-lg p-4 z-50">
           <View className="flex-row justify-between items-center mb-4">
