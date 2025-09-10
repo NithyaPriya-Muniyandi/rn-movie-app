@@ -11,7 +11,7 @@ export default function CourseHome() {
       <View className="flex-row justify-between mb-3">
         {/* Back Button */}
         <TouchableOpacity className="bg-gray-200 p-2 rounded-lg">
-          <Ionicons name="arrow-back-outline" size={20} color="black" />
+          <Ionicons name="swap-horizontal-outline" size={20} color="black" />
         </TouchableOpacity>
 
         {/* Info Button + Tooltip */}

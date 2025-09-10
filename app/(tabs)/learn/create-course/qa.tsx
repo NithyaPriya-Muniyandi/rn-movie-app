@@ -39,12 +39,12 @@ export default function QAPage() {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
+    <ScrollView contentContainerStyle={{ padding: 16 }} className="bg-white">
       <View className="bg-blue-50 rounded-xl p-4">
         {/* Header */}
         <View className="flex-row justify-between mb-3">
           <TouchableOpacity className="bg-gray-200 p-2 rounded-lg">
-            <Ionicons name="arrow-back-outline" size={20} color="black" />
+            <Ionicons name="swap-horizontal-outline" size={20} color="black" />
           </TouchableOpacity>
           <View className="relative">
             <TouchableOpacity
